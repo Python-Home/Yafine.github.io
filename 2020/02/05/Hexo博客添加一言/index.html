@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo博客添加一言 | 过客~励む</title><meta name="description" content="博客添加一言功能"><meta name="keywords" content="Hexo,matery主题"><meta name="author" content="YangAir"><meta name="copyright" content="YangAir"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="https://hm.baidu.com"/><link rel="preconnect" href="http://ta.qq.com"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="_Yxe-z9eMYY_SRPAcIzAbYH5As14vyJJcWZRdsz82oo"/><meta name="msvalidate.01" content="24D491BCFF09B589F74D051A28BEA16A"/><meta name="baidu-site-verification" content="ukPosCpWvc"/><meta name="360-site-verification" content="f67a6b2f0543b97e5f2c6504670f94b6"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Hexo博客添加一言"><meta name="twitter:description" content="博客添加一言功能"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0014.png"><meta property="og:type" content="article"><meta property="og:title" content="Hexo博客添加一言"><meta property="og:url" content="https://yafine.github.io/2020/02/05/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E4%B8%80%E8%A8%80/"><meta property="og:site_name" content="过客~励む"><meta property="og:description" content="博客添加一言功能"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0014.png"><meta property="article:published_time" content="2020-02-05T05:53:01.000Z"><meta property="article:modified_time" content="2020-04-20T06:40:32.860Z"><link rel="manifest" href="/img/pwa/manifest.json"/><meta name="theme-color" content="#fff"/><meta name="msapplication-TileColor" content="#fff"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/safari-pinned-tab.svg" color="#5bbad5"/><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/myblog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="canonical" href="https://yafine.github.io/2020/02/05/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E4%B8%80%E8%A8%80/"><link rel="prev" title="Hexo添加PWA支持" href="https://yafine.github.io/2020/02/06/Hexo%E6%B7%BB%E5%8A%A0PWA%E6%94%AF%E6%8C%81/"><link rel="next" title="npm、cnpm、yarn三剑客" href="https://yafine.github.io/2020/02/02/npm%E3%80%81cnpm%E3%80%81yarn%E4%B8%89%E5%89%91%E5%AE%A2/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?12c4949ccded8725d72796f9cafb6249";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '151181323', 'auto');
+ga('send', 'pageview');
+</script><script src="https://tajs.qq.com/stats?sId=66505462" charset="UTF-8"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/myblog/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"languages":{"author":"作者: YangAir","link":"链接: ","source":"来源: 过客~励む","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: true
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/flink.min.css"><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/medias/avatar.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/404/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/myblog/archives/"><div class="headline">文章</div><div class="length_num">28</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/myblog/tags/"><div class="headline">标签</div><div class="length_num">13</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/myblog/categories/"><div class="headline">分类</div><div class="length_num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/myblog/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/contact/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/link/"><i class="fa-fw fa fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-bicycle" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/myblog/relax/2048/"><i class="fa-fw fa fa-futbol"></i><span> 2048</span></a></li><li><a class="site-page" href="/myblog/relax/mofang/"><i class="fa-fw fa fa-gamepad"></i><span> 3D魔方</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API文档"><span class="toc-number">2.</span> <span class="toc-text">API文档</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#网页使用示例"><span class="toc-number">2.0.1.</span> <span class="toc-text">网页使用示例:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法："><span class="toc-number">3.</span> <span class="toc-text">使用方法：</span></a></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0014.png)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/myblog/">过客~励む</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/myblog/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/contact/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/myblog/link/"><i class="fa-fw fa fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-bicycle" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/myblog/relax/2048/"><i class="fa-fw fa fa-futbol"></i><span> 2048</span></a></li><li><a class="site-page" href="/myblog/relax/mofang/"><i class="fa-fw fa fa-gamepad"></i><span> 3D魔方</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Hexo博客添加一言</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-02-05 13:53:01"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-02-05</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-04-20 14:40:32"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-04-20</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/myblog/categories/Hexo%E5%8D%9A%E5%AE%A2/">Hexo博客</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">1.4k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 5 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/myblog/2020/02/05/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E4%B8%80%E8%A8%80/#post-comment"><span class="gitalk-comment-count comment-count"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><a href="Hitokoto.cn">一言网</a>创立于2016年，隶属于萌创Team，目前网站主要提供一句话服务。</p>
+<p>动漫也好、小说也好、网络也好，不论在哪里，我们总会看到有那么一两个句子能穿透你的心。我们把这些句子汇聚起来，形成一言网络，以传递更多的感动。如果可以，我们希望我们没有停止服务的那一天。</p>
+<p>简单来说，一言指的就是一句话，可以是动漫中的台词，也可以是网络上的各种小段子。<br>或是感动，或是开心，有或是单纯的回忆。来到这里，留下你所喜欢的那一句句话，与大家分享，这就是一言存在的目的。（来源于一言官方网站）</p>
+<h2 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h2><p> 这是一个Hitokoto Api更新时间表：</p>
+<table>
+<thead>
+<tr>
+<th><strong>时间</strong></th>
+<th><strong>影响Api</strong></th>
+<th><strong>调整</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2018年6月之前</td>
+<td>旧版API（<a href="http://api.hitokoto.cn和https://sslapi.hitokoto.cn）" target="_blank" rel="noopener">http://api.hitokoto.cn和https://sslapi.hitokoto.cn）</a></td>
+<td>旧版API将在6月份之前以切换解析的方式合并到v1API中。也就意味着调整之后请求此API无异于请求v1API。调整后此接口的稳定性将不再受到维护。</td>
+</tr>
+<tr>
+<td>2018年7月之前</td>
+<td>v1API（<a href="https://v1.hitokoto.cn）" target="_blank" rel="noopener">https://v1.hitokoto.cn）</a></td>
+<td>v1API将发布最终版本。v1接口将会在未来存在较长时间（即使v2发布，请放心使用）。</td>
+</tr>
+<tr>
+<td>v2 发布（时间未知）</td>
+<td>v2API（域名未知）</td>
+<td>上线v2API。</td>
+</tr>
+</tbody></table>
+<p><strong>目前 v1 接口已进入功能锁定阶段，任何需求请在 v2 功能申请表中提出。</strong></p>
+<p><strong>由于一言目前属于公益性运营，为了保证资源的公平利用和不过度消耗公益资金，我们会定期的屏蔽某些大流量的站点。若您的站点的流量较大，您需要提前联系我们获得授权后再开始使用。对于超过阈值的站点，我们有可能会通过一定途径（例如邮件）等方式联系您，若24小时无回应则域名将暂时进入黑名单。</strong></p>
+<p><strong>以下为API详细信息：</strong></p>
+<p>请求地址：<br>有两个请求地址可供您选择：</p>
+<table>
+<thead>
+<tr>
+<th><strong>请求地址</strong></th>
+<th><strong>请求方式</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://v1.hitokoto.cn/" target="_blank" rel="noopener">https://v1.hitokoto.cn/</a></td>
+<td>GET/POST</td>
+<td>1、已启用 HSTS， 并已加入 HSTS Preload List 计划 2、站点QPS限制：10，超过有可能会被屏蔽 3、线路：大陆+海外</td>
+</tr>
+<tr>
+<td><a href="https://international.v1.hitokoto.cn/" target="_blank" rel="noopener">https://international.v1.hitokoto.cn/</a></td>
+<td>GET/POST</td>
+<td>1、已启用 HSTS， 并已加入 HSTS Preload List 计划 2、站点QPS限制：25，超过有可能会被屏蔽 3、线路：海外</td>
+</tr>
+</tbody></table>
+<p><strong>参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>参数名称</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>c</td>
+<td>可选</td>
+<td>Cat，即类型。提交不同的参数代表不同的类别，具体：</td>
+</tr>
+<tr>
+<td>a</td>
+<td>Anime - 动画</td>
+<td></td>
+</tr>
+<tr>
+<td>b</td>
+<td>Comic – 漫画</td>
+<td></td>
+</tr>
+<tr>
+<td>c</td>
+<td>Game – 游戏</td>
+<td></td>
+</tr>
+<tr>
+<td>d</td>
+<td>Novel – 小说</td>
+<td></td>
+</tr>
+<tr>
+<td>e</td>
+<td>Myself – 原创</td>
+<td></td>
+</tr>
+<tr>
+<td>f</td>
+<td>Internet – 来自网络</td>
+<td></td>
+</tr>
+<tr>
+<td>g</td>
+<td>Other – 其他</td>
+<td></td>
+</tr>
+<tr>
+<td>其他不存在参数</td>
+<td>任意类型随机取得</td>
+<td></td>
+</tr>
+<tr>
+<td>encode</td>
+<td>可选</td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td>返回纯净文本</td>
+<td></td>
+</tr>
+<tr>
+<td>json</td>
+<td>返回不进行unicode转码的json文本</td>
+<td></td>
+</tr>
+<tr>
+<td>js</td>
+<td>返回指定选择器(默认.hitokoto)的同步执行函数。</td>
+<td></td>
+</tr>
+<tr>
+<td>其他不存在参数</td>
+<td>返回unicode转码的json文本</td>
+<td></td>
+</tr>
+<tr>
+<td>charset</td>
+<td>可选</td>
+<td></td>
+</tr>
+<tr>
+<td>utf-8</td>
+<td>返回 UTF-8 编码的内容，支持与异步函数同用。</td>
+<td></td>
+</tr>
+<tr>
+<td>gbk</td>
+<td>返回 GBK 编码的内容，不支持与异步函数同用。</td>
+<td></td>
+</tr>
+<tr>
+<td>callback</td>
+<td>可选</td>
+<td></td>
+</tr>
+<tr>
+<td>回调函数</td>
+<td>将返回的内容传参给指定的异步函数。</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>返回：(默认json格式)</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>返回参数名称</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>本条一言的id。 可以链接到<a href="https://hitokoto.cn?id=[id]查看这个一言的完整信息。" target="_blank" rel="noopener">https://hitokoto.cn?id=[id]查看这个一言的完整信息。</a></td>
+</tr>
+<tr>
+<td>hitokoto</td>
+<td>一言正文。编码方式unicode。使用utf-8。</td>
+</tr>
+<tr>
+<td>type</td>
+<td>类型。请参考第三节参数的表格。</td>
+</tr>
+<tr>
+<td>from</td>
+<td>一言的出处。</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>添加者。</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>添加时间。</td>
+</tr>
+<tr>
+<td>注意：如果encode参数为text，那么输出的只有一言正文。</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>示例：</strong></p>
+<p><a href="https://v1.hitokoto.cn/（从7种分类中随机抽取）" target="_blank" rel="noopener">https://v1.hitokoto.cn/（从7种分类中随机抽取）</a></p>
+<p><a href="https://v1.hitokoto.cn/?c=b" target="_blank" rel="noopener">https://v1.hitokoto.cn/?c=b</a> （请求获得一个分类是漫画的句子）</p>
+<p><a href="https://v1.hitokoto.cn/?c=f&amp;encode=text" target="_blank" rel="noopener">https://v1.hitokoto.cn/?c=f&amp;encode=text</a> （请求获得一个来自网络的句子，并以纯文本格式输出）</p>
+<h4 id="网页使用示例"><a href="#网页使用示例" class="headerlink" title="网页使用示例:"></a>网页使用示例:</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;p id=<span class="string">"hitokoto"</span>&gt;:D 获取中...&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;!-- 以下写法，选取一种即可 --&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- 现代写法，推荐 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;!-- 兼容低版本浏览器 (包括 IE)，可移除 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="https:/</span><span class="regexp">/cdn.jsdelivr.net/</span>npm/bluebird@<span class="number">3</span>/js/browser/bluebird.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script src="</span>https:<span class="comment">//cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line">&lt;!--End--&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  fetch(<span class="string">'https://v1.hitokoto.cn'</span>)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span> (<span class="params">res</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> res.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> hitokoto = <span class="built_in">document</span>.getElementById(<span class="string">'hitokoto'</span>);</span><br><span class="line">      hitokoto.innerText = data.hitokoto; </span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.error(err);</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- 老式写法，兼容性最忧 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  var xhr = new XMLHttpRequest();</span></span><br><span class="line"><span class="regexp">  xhr.open('get', 'https:/</span><span class="regexp">/v1.hitokoto.cn');</span></span><br><span class="line"><span class="regexp">  xhr.onreadystatechange = function () &#123;</span></span><br><span class="line"><span class="regexp">    if (xhr.readyState === 4) &#123;</span></span><br><span class="line"><span class="regexp">      var data = JSON.parse(xhr.responseText);</span></span><br><span class="line"><span class="regexp">      var hitokoto = document.getElementById('hitokoto');</span></span><br><span class="line"><span class="regexp">      hitokoto.innerText = data.hitokoto;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  xhr.send();</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 新 API 方法， 十分简洁 --&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://v1.hitokoto.cn/?encode=js&amp;select=%23hitokoto"</span> defer&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h2><p>以本主题matery为例：</p>
+<p>首先打开主题的<code>layout.ejs</code>文件，路径<code>theme/matery/layout/layout.ejs</code>，将下面的代码添加到<code>&lt;/body&gt;</code>之前。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;!-- 一言API --&gt;</span><br><span class="line">&lt;!-- 现代写法，推荐 --&gt;</span><br><span class="line">&lt;!-- 兼容低版本浏览器 (包括 IE)，可移除 --&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="https:/</span><span class="regexp">/cdn.jsdelivr.net/</span>npm/whatwg-fetch@<span class="number">2.0</span><span class="number">.3</span>/fetch.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;!--End--&gt;</span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">  fetch('https://v1.hitokoto.cn')</span></span><br><span class="line"><span class="string">    .then(function (res)&#123;</span></span><br><span class="line"><span class="string">      return res.json();</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">    .then(function (data) &#123;</span></span><br><span class="line"><span class="string">      var hitokoto = document.getElementById('hitokoto');</span></span><br><span class="line"><span class="string">      hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">    .catch(function (err) &#123;</span></span><br><span class="line"><span class="string">      console.error(err);</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后再将下面的代码，添加到你想要添加的位置：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"hitokoto"</span>&gt;</span>正在加载一言...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最后执行部署命令查看效果即可，也可以在本地运行查看效果。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/loading2.gif" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200205154108.png"  alt=""></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">YangAir</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yafine.github.io/2020/02/05/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E4%B8%80%E8%A8%80/">https://yafine.github.io/2020/02/05/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E4%B8%80%E8%A8%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Yafine.github.io" target="_blank">过客~励む</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/myblog/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/myblog/tags/matery%E4%B8%BB%E9%A2%98/">matery主题</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0014.png" data-sites="qq,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/medias/reward/wechat.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/medias/reward/alipay.jpg" alt="支付寶"/><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><div id="wpac-rating" style="text-align:center;margin-top: 10px;"></div><script>wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 18134});
+(function() {
+  if ('WIDGETPACK_LOADED' in window) return;
+  WIDGETPACK_LOADED = true;
+  var mc = document.createElement('script');
+  mc.type = 'text/javascript';
+  mc.async = true;
+  mc.src = '//embed.widgetpack.com/widget.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();</script><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/myblog/2020/02/06/Hexo%E6%B7%BB%E5%8A%A0PWA%E6%94%AF%E6%8C%81/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0011.png" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/404/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hexo添加PWA支持</div></div></a></div><div class="next-post pull_right"><a href="/myblog/2020/02/02/npm%E3%80%81cnpm%E3%80%81yarn%E4%B8%89%E5%89%91%E5%AE%A2/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0013.png" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/404/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">npm、cnpm、yarn三剑客</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/myblog/2020/04/07/修改文章发布统计图的开始时间/" title="修改文章发布统计图的开始时间"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0028.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-04-07</div><div class="relatedPosts_title">修改文章发布统计图的开始时间</div></div></a></div><div class="relatedPosts_item"><a href="/myblog/2020/03/25/Matery主题添加loading-pages/" title="Matery主题添加loading-pages"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0027.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-25</div><div class="relatedPosts_title">Matery主题添加loading-pages</div></div></a></div><div class="relatedPosts_item"><a href="/myblog/2020/03/18/Hexo-Github博客搭建之博客优化篇/" title="Hexo+Github博客搭建之博客优化篇"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0027.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-18</div><div class="relatedPosts_title">Hexo+Github博客搭建之博客优化篇</div></div></a></div><div class="relatedPosts_item"><a href="/myblog/2020/03/17/Hexo-Github博客搭建之Matery主题个性化修改篇/" title="Hexo+Github博客搭建之Matery主题个性化修改篇"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0023.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-17</div><div class="relatedPosts_title">Hexo+Github博客搭建之Matery主题个性化修改篇</div></div></a></div><div class="relatedPosts_item"><a href="/myblog/2020/03/17/Hexo-Github博客搭建之Matery主题安装配置篇/" title="Hexo+Github博客搭建之Matery主题安装配置篇"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0022.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-17</div><div class="relatedPosts_title">Hexo+Github博客搭建之Matery主题安装配置篇</div></div></a></div><div class="relatedPosts_item"><a href="/myblog/2020/02/21/修改matery原有主题相册/" title="修改matery原有主题相册"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/images/0005.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-21</div><div class="relatedPosts_title">修改matery原有主题相册</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论<a id="switch-comment" href="javascript:void(0);" title="切换为来必力" target="_self"><i class="fa fas fa-toggle-off" aria-hidden="true"></i></a></span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '9892fd65fc9866d49ffc',
+  clientSecret: '623b8d073d0894e8367a1484d4e29d0e01de37db',
+  repo: 'Yafine-gitalks',
+  owner: 'Yafine',
+  admin: ['Yafine'],
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN',
+  perPage: 10,
+  distractionFreeMode: false,
+  pagerDirection: 'last',
+  createIssueManually: false,
+  updateCountCallback: commentCount
+})
+gitalk.render('gitalk-container')
+
+function commentCount(n){
+  try {
+    document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+  } catch (e) {
+    return false
+  }
+}</script><div id="lv-container" data-id="city" data-uid="MTAyMC80Njg0OC8yMzM0OQ==" style="display: none;"><script>(function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></article></main><footer id="footer" style="background-color: transparent;" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By YangAir</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">簡</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.1.8/source/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.1.8/source/js/main.js"></script><script src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.1.8/source/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.1.8/source/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.1.8/source/js/third-party/click_heart.js"></script><script src="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.1.8/source/js/search/local-search.js"></script><script>if (document.getElementsByClassName('mermaid').length) {
+  loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',function () {
+    mermaid.initialize({
+      theme: 'dark',
+  })
+})
+}</script><script src="/js/third-party/switch_comments.js"></script></body></html>
