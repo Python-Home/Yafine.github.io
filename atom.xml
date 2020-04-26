@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yafine-blog.cn/"/>
-  <updated>2020-04-26T06:34:52.515Z</updated>
+  <updated>2020-04-26T07:59:59.397Z</updated>
   <id>https://yafine-blog.cn/</id>
   
   <author>
@@ -21,22 +21,21 @@
     <link href="https://yafine-blog.cn/posts/12b4.html"/>
     <id>https://yafine-blog.cn/posts/12b4.html</id>
     <published>2020-04-26T06:24:02.000Z</published>
-    <updated>2020-04-26T06:34:52.515Z</updated>
+    <updated>2020-04-26T07:59:59.397Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h4 id=&quot;修改原有相册&quot;&gt;&lt;a href=&quot;#修改原有相册&quot; class=&quot;headerlink&quot; title=&quot;修改原有相册&quot;&gt;&lt;/a&gt;修改原有相册&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;参考教程：&lt;a
-        
-      
+      Matery主题的一些个性化修改
     
     </summary>
     
     
+      <category term="Hexo博客" scheme="https://yafine-blog.cn/categories/Hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Hexo" scheme="https://yafine-blog.cn/tags/Hexo/"/>
+    
+      <category term="matery主题" scheme="https://yafine-blog.cn/tags/matery%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
