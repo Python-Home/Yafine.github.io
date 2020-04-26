@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yafine-blog.cn/"/>
-  <updated>2020-04-26T07:59:59.397Z</updated>
+  <updated>2020-04-26T15:29:34.489Z</updated>
   <id>https://yafine-blog.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客订阅文章通知功能</title>
+    <link href="https://yafine-blog.cn/posts/ebb2.html"/>
+    <id>https://yafine-blog.cn/posts/ebb2.html</id>
+    <published>2020-04-26T09:34:35.000Z</published>
+    <updated>2020-04-26T15:29:34.489Z</updated>
+    
+    <summary type="html">
+    
+      使用插件实现博客文章订阅并使用浏览器进行新文章推送的通知
+    
+    </summary>
+    
+    
+      <category term="Hexo博客" scheme="https://yafine-blog.cn/categories/Hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Hexo" scheme="https://yafine-blog.cn/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo+Github博客搭建之Matery主题个性化修改篇（二）</title>
@@ -444,27 +465,6 @@
     
     
       <category term="nodejs" scheme="https://yafine-blog.cn/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo博客部署到码云和Coding</title>
-    <link href="https://yafine-blog.cn/posts/51fb.html"/>
-    <id>https://yafine-blog.cn/posts/51fb.html</id>
-    <published>2020-01-28T06:19:48.000Z</published>
-    <updated>2020-04-23T14:20:38.831Z</updated>
-    
-    <summary type="html">
-    
-      Hexo博客部署到码云和coding的操作步骤
-    
-    </summary>
-    
-    
-      <category term="Hexo博客" scheme="https://yafine-blog.cn/categories/Hexo%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="Hexo" scheme="https://yafine-blog.cn/tags/Hexo/"/>
     
   </entry>
   
