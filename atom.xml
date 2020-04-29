@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>过客~励む</title>
+  <title>压饭阁</title>
   
   <subtitle>有志者事竟成</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://yafine-blog.cn/</id>
   
   <author>
-    <name>YangAir</name>
+    <name>压饭</name>
     
   </author>
   
