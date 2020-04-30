@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yafine-blog.cn/"/>
-  <updated>2020-04-27T05:20:10.199Z</updated>
+  <updated>2020-04-30T01:52:09.601Z</updated>
   <id>https://yafine-blog.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>修改matery原有主题相册</title>
+    <link href="https://yafine-blog.cn/posts/3b98.html"/>
+    <id>https://yafine-blog.cn/posts/3b98.html</id>
+    <published>2020-04-30T01:50:06.000Z</published>
+    <updated>2020-04-30T01:52:09.601Z</updated>
+    
+    <summary type="html">
+    
+      对hexo-theme-matery主题原有相册进行修改，单独写成一个页面
+    
+    </summary>
+    
+    
+      <category term="Hexo博客" scheme="https://yafine-blog.cn/categories/Hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Hexo" scheme="https://yafine-blog.cn/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客订阅文章通知功能</title>
@@ -442,29 +463,6 @@
       <category term="Hexo" scheme="https://yafine-blog.cn/tags/Hexo/"/>
     
       <category term="matery主题" scheme="https://yafine-blog.cn/tags/matery%E4%B8%BB%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>npm、cnpm、yarn三剑客</title>
-    <link href="https://yafine-blog.cn/posts/8094.html"/>
-    <id>https://yafine-blog.cn/posts/8094.html</id>
-    <published>2020-02-02T06:11:12.000Z</published>
-    <updated>2020-04-26T06:27:14.992Z</updated>
-    
-    <summary type="html">
-    
-      关于三剑客npm、cnpm、yarn的简单介绍
-    
-    </summary>
-    
-    
-      <category term="Web前端" scheme="https://yafine-blog.cn/categories/Web%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Node.js" scheme="https://yafine-blog.cn/categories/Web%E5%89%8D%E7%AB%AF/Node-js/"/>
-    
-    
-      <category term="nodejs" scheme="https://yafine-blog.cn/tags/nodejs/"/>
     
   </entry>
   
